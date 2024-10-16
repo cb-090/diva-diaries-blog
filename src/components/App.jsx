@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Nav from "./Nav"
 import Article from "./Article"
 import ArticleEntry from "./ArticleEntry"
+import { SignIn, SignOut, useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
 import "./App.css"
 
@@ -9,11 +10,19 @@ export default function App() {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(null)
+  const user = useAuthentication()
 
   // This is a trivial app, so just fetch all the articles once, when
   // the app is loaded. A real app would do pagination. Note that
   // "fetchArticles" is what gets the articles from the service and
   // then "setArticles" writes them into the React state.
+
+  useEffect(() => {
+    if (user) {
+      fetchArticles().then(setArticles)
+    }
+  }, [user])
+  
   useEffect(() => {
     fetchArticles().then(setArticles)
   }, [])
@@ -31,10 +40,16 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        Blog <button onClick={() => setWriting(true)}>New Article</button>
+        Blog
+        {user && <button onClick={() => setWriting(true)}>New Article</button>}
+        {!user ? <SignIn /> : <SignOut />}
       </header>
-      <Nav articles={articles} setArticle={setArticle} />
-      {writing ? (
+
+      {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
+
+      {!user ? (
+        ""
+      ) : writing ? (
         <ArticleEntry addArticle={addArticle} />
       ) : (
         <Article article={article} />

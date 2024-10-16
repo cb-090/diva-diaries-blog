@@ -1,5 +1,5 @@
 {
-  "name": "bs",
+  "name": "basic-blog",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^10.14.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tree": "^0.1.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
