@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # private keys
-.firebaseConfig.js
+firebaseConfig.js
