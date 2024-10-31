@@ -1,5 +1,6 @@
 {
-  "name": "basic-blog",
+  "name": "diva-diaries",
+  "description": "A React based blog app for the divas of the world.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

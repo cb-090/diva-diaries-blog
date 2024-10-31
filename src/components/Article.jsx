@@ -2,12 +2,17 @@ export default function Article({ article }) {
   return (
     <article>
       {!article ? (
-        <p>Where's the ARTICLE 💜 (Error: No article selected)</p>
+        <>
+        <h2>Where's the ARTICLE 💜</h2>
+        <p>No article selected.</p>
+        </>
       ) : (
         <section>
           <h2>{article.title}</h2>
-          <p className="date">{`Posted: ${article.date}`}</p>
+          <div className="articleBody">
+          <p className="date">{`Posted: ${article.date.toDate()}`}</p>
           <p className="body">{article.body}</p>
+          </div>
         </section>
       )}
     </article>

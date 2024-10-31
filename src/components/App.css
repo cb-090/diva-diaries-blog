@@ -6,7 +6,7 @@ body {
 .App {
   display: grid;
   grid-template-rows: min-content auto;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 25% auto;
   height: 100vh;
   overflow: scroll;
 }
@@ -28,9 +28,52 @@ h1 {
   font-size: 1.6em;
 }
 
+h2 {
+  font-weight: normal;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.SignOut {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 40px;
+}
+
+button {
+  color: #012a4a;
+  background-color: rgb(216, 171, 255);
+  padding: 10px;
+  border-radius: 10px;
+  border: .5px solid white;
+  height: 40px;
+  font-family: "Manrope", serif;
+  font-size: 0.8em;
+}
+
+.homePage {
+  background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
+  grid-column: 1 / span 2;
+}
+
+.articleEntry {
+  padding: 30px;
+  display: flex;
+  justify-content: left;
+  background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
+}
+
 form {
-  padding-top: 5%;
-  padding-left: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,13 +84,18 @@ form {
 form input,
 form textarea {
   margin-bottom: 10px;
-  width: 300px;
+  width: 400px;
+  border: 1px solid #012a4a;
+  border-radius: 5px;
+}
+
+form textarea {
+  height: 200px;
 }
 
 article {
   background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
-  padding-left: 30px;
-  padding-top: 10px;
+  padding: 10px 30px;
 }
 
 nav,
@@ -62,13 +110,29 @@ nav {
   padding: 10px;
 }
 
+nav p {
+  width: fit-content;
+}
+
 nav p:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
+.articleBody {
+  border-radius: 5px;
+  background-color: #dee9ff;
+  padding: 10px;
+  width: fit-content;
+  overflow-wrap: break-word;
+  border: 3px solid rgb(195, 138, 248);
+}
+
 article .date {
+  font-size: 0.9em;
   font-style: italic;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(214, 197, 254);
 }
 
 article .body {
@@ -84,42 +148,12 @@ article .body {
   border: 1px solid white;
 }
 
-button {
-  background-color: rgb(216, 171, 255);
-  padding: 10px;
-  border-radius: 10px;
-  border: .5px solid white;
-  height: 40px;
-  font-family: "Manrope", serif;
-  font-size: 0.8em;
-}
-
-.SignOut {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-img {
-  height: 40px;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.articleEntry {
-  display: flex;
-  justify-content: left;
-  background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
-}
-
 @media only screen and (max-width: 600px) {
   header {
     flex-direction: column-reverse;
+  }
+
+  form input, form textarea {
+    width: 100%;
   }
 }
