@@ -16,7 +16,6 @@ export default function ArticleEntry({ addArticle }) {
   }
 
   return (
-    <div className="articleEntry">
       <form onSubmit={submit}>
         {error && <p className="error">{error}</p>}
         Title
@@ -29,6 +28,5 @@ export default function ArticleEntry({ addArticle }) {
         ></textarea>
         <button type="submit">Create</button>
       </form>
-    </div>
   )
 }
