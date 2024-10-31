@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", serif;
 }
 
 .App {
   display: grid;
   grid-template-rows: min-content auto;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 20% auto;
   height: 100vh;
   overflow: scroll;
 }
@@ -14,17 +14,28 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  align-items: center;
   color: white;
+  font-size: 1.2em;
   grid-column: 1 / span 2;
-  padding: 10px 5px;
+  padding: 25px;
+  background-color: rgb(155, 86, 219);
+  border-bottom: 3px solid rgb(195, 138, 248);
+}
+
+h1 {
+  font-family: "Lora", sans-serif;
+  font-size: 1.6em;
 }
 
 form {
-  padding: 10px;
+  padding-top: 5%;
+  padding-left: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 300px;
+  color: #012a4a;
 }
 
 form input,
@@ -33,14 +44,22 @@ form textarea {
   width: 300px;
 }
 
+article {
+  background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
 nav,
 article {
   height: 100%;
-  padding: 10px;
+  color: #012a4a;
 }
 
 nav {
   background-color: #dee9ff;
+  border-right: 3px solid rgb(195, 138, 248);
+  padding: 10px;
 }
 
 nav p:hover {
@@ -54,10 +73,53 @@ article .date {
 
 article .body {
   white-space: break-spaces;
+  font-size: 1.1em;
 }
 
 .error {
   background-color: red;
-  color: gold;
+  color: white;
   padding: 5px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+button {
+  background-color: rgb(216, 171, 255);
+  padding: 10px;
+  border-radius: 10px;
+  border: .5px solid white;
+  height: 40px;
+  font-family: "Manrope", serif;
+  font-size: 0.8em;
+}
+
+.SignOut {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 40px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.articleEntry {
+  display: flex;
+  justify-content: left;
+  background-image: linear-gradient(#4EA8DE, #C1D3FE, #C8B6FF);
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column-reverse;
+  }
 }

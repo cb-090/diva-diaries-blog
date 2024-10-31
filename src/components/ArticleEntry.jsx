@@ -9,14 +9,14 @@ export default function ArticleEntry({ addArticle }) {
     setError(null)
     e.preventDefault()
     if (!title.trim() || !body.trim()) {
-      setError("Both the title and body must be supplied")
+      setError("Both the title and body must be supplied.")
     } else {
       addArticle({ title, body })
     }
   }
 
   return (
-    <div>
+    <div className="articleEntry">
       <form onSubmit={submit}>
         {error && <p className="error">{error}</p>}
         Title
